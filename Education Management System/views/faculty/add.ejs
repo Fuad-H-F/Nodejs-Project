@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Faculty Add </title>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: #34495e;
+        }
+        .menu{
+          width: 100%;
+          background: #000033;
+          height: 80px;
+          
+        }
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+
+        }
+        ul li{
+          float: left;
+          margin-top: 20px;
+        }
+        ul li a{
+          width: 150px;
+          color: white;
+          display: block;
+          text-decoration: none;
+          font-size: 20px;
+          text-align: center;
+          padding: 10px;
+          border-radius: 10px;
+          font-family: Century Gothic;
+          font-weight: bold;
+        }
+        a:hover{
+          background: #669900 ;
+
+        }
+        ul li ul{
+          background:#000033 ;
+          display: none;
+        }
+        ul li ul li{
+          float: none;
+        }
+        ul li:hover ul{
+          display: block;
+        }
+        .box{
+				width: 300px;
+				padding: 40px;
+				margin-left: auto;
+        margin-right: auto;
+				top: 15%;
+				left: 30%;
+				background: #191919;
+				text-align: center;
+			}
+			.box h1{
+				color: white;
+				text-transform: uppercase;
+				font-weight: 500;
+			}
+			.box h6{
+				color: white;
+				font-weight: 500;
+			}
+			.box input[type = "text"],.box input[type = "number"],.box input[type = "email"],.box input[type = "password"],.box div,.box input[type = "file"]{
+				border:0;
+				background: none;
+				display: block;
+				margin: 20px auto;
+				text-align: center;
+				border: 2px solid #3498db;
+				padding: 14px 10px;
+				width: 200px;
+				outline: none;
+				color: white;
+				border-radius: 24px;
+				transition: 0.25s;
+			}
+			.box input[type = "text"]:focus,.box input[type = "number"]:focus,.box input[type = "email"]:focus,.box input[type = "password"]:focus{
+				width: 280px;
+				border-color: #2ecc71;
+			}
+			.box input[type = "submit"]{
+				border:0;
+				background: none;
+				display: block;
+				margin: 20px auto;
+				text-align: center;
+				border: 2px solid #2ecc71;
+				padding: 14px 40px;
+				outline: none;
+				color: white;
+				border-radius: 24px;
+				transition: 0.25s;
+				cursor: pointer;
+			}
+			.box input[type = "submit"]:hover{
+				background: #2ecc71;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <ul> 
+        <li> <a>Admin</a>
+          <ul>
+            <li><a href="/admin/profile"> Profile</a></li>
+            <li><a href="/admin/edit"> Edit</a></li>   
+          </ul>
+        </li>
+        <li><a>Course</a>  
+          <ul>
+            <li><a href="/course/add"> Add</a></li>
+            <li><a href="/course/approvestudent"> Approve Student</a></li>
+            <li><a href="/course/approvefaculty"> Approve faculty</a></li>
+            <li><a href="/course/show">Show</a> </li>
+          </ul>
+        </li>
+        <li> <a>Faculty</a> 
+          <ul>
+            <li><a href="/faculty/add"> Add</a></li>
+            <li><a href="/faculty/show">Show</a> </li>
+          </ul>
+        </li>
+        <li><a>Student </a>
+            <ul>
+              <li><a href="/student/add"> Add</a></li>
+              <li><a href="/student/show">Show</a> </li>
+            </ul>
+          </li>
+          <li><a href="/logout"> Logout </a></li>             
+      </ul>
+    </div>
+    <form class="box" method="post">
+      <h1>Add</h1>
+      <input type="text" name="fname" placeholder="Firstname">
+      <% if(error.fname){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.fname.msg %></p>
+      <% } %>
+      <input type="text" name="lname" placeholder="Lastname">
+      <% if(error.lname){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.lname.msg %></p>
+      <% } %>
+      <input type="number" name="mobile" placeholder="Mobile">
+      <% if(error.mobile){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.mobile.msg %></p>
+      <% } %>
+      <input type="email" name="email" placeholder="Email">
+      <% if(error.email){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.email.msg %></p>
+      <% } %>
+      <input type="text" name="username" placeholder="Username">
+      <% if(error.username){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.username.msg %></p>
+      <% } %>
+      <input type="password" name="password" placeholder="Password">
+      <% if(error.password){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.password.msg %></p>
+      <% } %>
+      <input type="text" name="courses" placeholder="Courses">
+      <% if(error.courses){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.courses.msg %></p>
+      <% } %>
+      <div>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+      </div>
+      <% if(error.gender){ %>
+        <p style="font-family: Century Gothic;color: red; font-weight: bold;"><%= error.gender.msg %></p>
+      <% } %>
+      <input type="file" name="image">
+      <h6>Choose a Photo</h6>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>

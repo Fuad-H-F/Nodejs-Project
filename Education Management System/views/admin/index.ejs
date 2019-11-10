@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Admin </title>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          background: #34495e;
+        }
+        .menu{
+          width: 100%;
+          background: #000033;
+          height: 80px;
+          
+        }
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+
+        }
+        ul li{
+          float: left;
+          margin-top: 20px;
+        }
+        ul li a{
+          width: 150px;
+          color: white;
+          display: block;
+          text-decoration: none;
+          font-size: 20px;
+          text-align: center;
+          padding: 10px;
+          border-radius: 10px;
+          font-family: Century Gothic;
+          font-weight: bold;
+        }
+        a:hover{
+          background: #669900 ;
+
+        }
+        ul li ul{
+          background:#000033 ;
+          display: none;
+        }
+        ul li ul li{
+          float: none;
+        }
+        ul li:hover ul{
+          display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <ul> 
+        <li> <a>Admin</a>
+          <ul>
+            <li><a href="/admin/profile"> Profile</a></li>
+            <li><a href="/admin/edit"> Edit</a></li>   
+          </ul>
+        </li>
+        <li><a>Course</a>  
+          <ul>
+            <li><a href="/course/add"> Add</a></li>
+            <li><a href="/course/approvestudent"> Approve Student</a></li>
+            <li><a href="/course/approvefaculty"> Approve faculty</a></li>
+            <li><a href="/course/show">Show</a> </li>
+          </ul>
+        </li>
+        <li> <a>Faculty</a> 
+          <ul>
+            <li><a href="/faculty/add"> Add</a></li>
+            <li><a href="/faculty/show">Show</a> </li>
+          </ul>
+        </li>
+        <li><a>Student </a>
+            <ul>
+              <li><a href="/student/add"> Add</a></li>
+              <li><a href="/student/show">Show</a> </li>
+            </ul>
+          </li>
+          <li><a href="/logout"> Logout </a></li>             
+      </ul>
+    </div>
+    <br><br>
+    <h1 align="center" style="color:white;">Welcome Admin!</h1>
+  </body>
+</html>
